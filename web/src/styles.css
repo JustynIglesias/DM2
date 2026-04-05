@@ -1,0 +1,236 @@
+:root {
+  color-scheme: light;
+  --bg: #f4efe7;
+  --bg-accent: #e4d5bb;
+  --panel: rgba(255, 251, 244, 0.88);
+  --panel-strong: #fff9ef;
+  --ink: #1f2933;
+  --muted: #5b6875;
+  --line: rgba(75, 85, 99, 0.18);
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --accent: #c0841d;
+  --shadow: 0 20px 45px rgba(65, 51, 23, 0.12);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(192, 132, 29, 0.18), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.14), transparent 24%),
+    linear-gradient(135deg, #f8f3eb 0%, #efe6d7 100%);
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 56px;
+}
+
+.hero {
+  padding: 18px 0 26px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  line-height: 0.98;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.panel {
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 24px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.upload-panel,
+.summary-panel,
+.recommendation-panel,
+.results-panel {
+  padding: 22px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.22rem;
+}
+
+.panel-header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.upload-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.field span {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.field input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--ink);
+  font: inherit;
+}
+
+.primary-button {
+  align-self: end;
+  min-height: 50px;
+  border: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 18px 30px rgba(17, 94, 89, 0.2);
+}
+
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.status-message {
+  margin: 16px 2px 0;
+  color: var(--muted);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.results-panel {
+  grid-column: 1 / -1;
+}
+
+.summary-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.summary-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel-strong);
+}
+
+.summary-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.recommendation-text {
+  margin: 18px 0 0;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.11), rgba(192, 132, 29, 0.14));
+  line-height: 1.7;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+tbody tr:hover {
+  background: rgba(15, 118, 110, 0.05);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .upload-form,
+  .summary-content,
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 24px;
+  }
+}
