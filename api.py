@@ -71,7 +71,10 @@ def analyze():
             "query_name": result.query_name,
             "document_count": result.document_count,
             "vocabulary_size": result.vocabulary_size,
+            "similar_count": result.similar_count,
+            "paraphrased_count": result.paraphrased_count,
             "interpretation": result.interpretation,
+            "semantic_model": result.semantic_model,
             "ranked_documents": result.ranked_documents,
         }
     )
