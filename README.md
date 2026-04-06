@@ -4,8 +4,8 @@ This project is a foundational document analysis system based on TF-IDF and cosi
 
 ## What it does
 
-- Accepts one `.txt` query document
-- Loads multiple `.txt` comparison documents from a folder
+- Accepts one `.txt`, `.pdf`, or `.docx` query document
+- Loads multiple `.txt`, `.pdf`, or `.docx` comparison documents from a folder
 - Tokenizes and analyzes the text
 - Builds TF, DF, IDF, and TF-IDF values
 - Computes cosine similarity and angle
@@ -70,7 +70,6 @@ This version already goes beyond simple score printing because it:
 
 It is designed so you can later extend it with:
 
-- `.pdf` and `.docx` support
 - stopword removal
 - stemming or lemmatization
 - classification
